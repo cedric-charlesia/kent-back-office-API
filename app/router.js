@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
+// CONTROLLERS
+const defibrilatorsController = require("./controllers/defibrilatorController");
+
 // DEFIBRILATORS ROUTE
-router.get("/defibrilators", (_, response) => {
-  response.status(200).send("Defibrilator route is working");
-});
+router.get("/defibrilators", defibrilatorsController.findAllDefibrilators);
 
 module.exports = router;
