@@ -1,4 +1,4 @@
-const client = require("../database/database");
+const client = require("../database");
 
 class Defibrilator {
   constructor(obj = {}) {
