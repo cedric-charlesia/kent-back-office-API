@@ -6,7 +6,7 @@ const port = process.env.port || 3001;
 
 const router = require("./app/router");
 
-//---CORS
+//---CORS Access
 const cors = require("cors");
 app.use(
   cors({
@@ -17,6 +17,11 @@ app.use(
     maxAge: 3600,
   })
 );
+
+// Sanitizer
+const cleaner = require("./app/middlewares/cleaner");
+
+app.use(cleaner);
 
 app.use(router);
 
